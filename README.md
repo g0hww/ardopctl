@@ -3,15 +3,15 @@ Hooks ardop into rigctld, so that PTT key up and key down commands  are managage
 
 usage: ardopctl.py [-h] [-r RIGCTLD] [-t PTT_TIMEOUT] [-a ARDOPBIN]
 
-Hooks ardop into rigctld, so that PTT key up and key down commands are
-managaged by hamlib. Enables support for embedded auto-QSY feature configured
-into garim.ini TNC blocks using RADIOHEX commands. The garim.ini file may have
-multiple TNC blocks defined each specifying different operational frequencies.
-RADIOHEX PREFIX 2301 is interpreted as a frequency command, frequency must be
-9 decimal digits in Hz, MMMKKKHHH, and padded with trailing 'f' chars to
-length 14. Thus a single frequency may be specified in each TNC block using
-statements like these: "tnc-init-cmd = RADIOHEX = 2301003606000f" or "tnc-
-init-cmd = RADIOHEX = 2301007056000f"
+Hooks ardop into rigctld, so that PTT key up and key down commands are managaged by hamlib. Enables support for embedded auto-QSY feature configured into garim.ini TNC blocks using RADIOHEX commands. 
+
+The garim.ini file may have multiple TNC blocks defined each specifying different operational frequencies.
+RADIOHEX PREFIX 2301 is interpreted as a frequency command, frequency must be 9 decimal digits in Hz, MMMKKKHHH, and padded with trailing 'f' chars to length 14. Thus a single frequency may be specified in each TNC block using
+statements like these: 
+
+  "tnc-init-cmd = RADIOHEX = 2301003606000f" 
+or 
+  "tnc-init-cmd = RADIOHEX = 2301007056000f"
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -24,5 +24,5 @@ optional arguments:
                         path to ardop executable. if not provided, ardop must
                         be spawned/killed manually using (as a minimum)
                         options as printed by ardopctl. May be useful when
-                        running ardop in gdb. (default: )
+                        running ardop in gdb. (default: nothing)
 
