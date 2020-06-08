@@ -32,7 +32,6 @@ Optional arguments to ardopctl.py
   -t PTT_TIMEOUT, --ptt_timeout PTT_TIMEOUT
   
                         ptt hang timeout in seconds, triggers SIGINT, commands
-                        
                         PTT Off and abort (default: 60.0)
                         
   -a ARDOPBIN, --ardopbin ARDOPBIN
