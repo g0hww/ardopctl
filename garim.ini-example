@@ -1,0 +1,144 @@
+# Example configuration file.
+# More info at: http://www.whitemesa.net/garim/garim.html#conf
+# or in the garim-help.pdf file included in this distribution.
+[tnc]
+# First tnc - set ipaddr to point to the host where the
+# tnc is running, and set the port number as needed along
+# with mycall and your grid square. The tnc name will
+# appear in beacon messages so change that as you like.
+# This will be TNC number 1 since it's first in the file.
+# More info at: http://www.whitemesa.net/garim/garim.html#conf
+# or in the garim-help.pdf file included in this distribution.
+ipaddr = 127.0.0.1
+port = 8515
+mycall = NOCALL 
+netcall = QST
+gridsq = IO62
+name = IC-7200
+info = Info: Icom IC-7200 - Trap Dipole
+fecmode = 4FSK.500.50
+squelch = 5
+busydet = 5
+leader = 240
+enpingack = TRUE
+listen = TRUE
+# Use 'tnc-init-cmd' to send arbitrary initialization commands
+# to the TNC when you ATTACH. Limit is 32 'tnc-init-cmd' lines,
+# of max length 128 chars. Use this only for TNC commands not
+# managed by ARIM, such as radio control commands.
+#tnc-init-cmd = LEADER 300
+arq-sendcr = TRUE
+arq-timeout = 120
+arq-bandwidth = 500
+arq-negotiate-bw = TRUE
+btime = 10
+reset-btime-on-tx = TRUE 
+##
+[tnc]
+# Second tnc 
+ipaddr = 127.0.0.1
+port = 8515
+mycall = NOCALL 
+netcall = QST
+gridsq = IO62
+name = IC-7200-3606
+info = Info: Icom IC-7200 - Trap Dipole
+fecmode = 4FSK.500.50
+squelch = 5
+busydet = 5
+leader = 240
+enpingack = TRUE
+listen = TRUE
+# Use 'tnc-init-cmd' to send arbitrary initialization commands
+# to the TNC when you ATTACH. Limit is 32 'tnc-init-cmd' lines,
+# of max length 128 chars. Use this only for TNC commands not
+# managed by ARIM, such as radio control commands.
+# 
+# This command is specific to ardopctl.py
+tnc-init-cmd = RADIOHEX = 2301003606000f 
+#
+arq-sendcr = TRUE
+arq-timeout = 120
+arq-bandwidth = 500
+arq-negotiate-bw = TRUE
+btime = 10
+reset-btime-on-tx = TRUE
+##
+[tnc]
+# Third tnc - 7.056MHz
+ipaddr = 127.0.0.1
+port = 8515
+mycall = NOCALL 
+netcall = QST
+gridsq = IO62
+name = IC-7200-7056
+info = Info: Icom IC-7200 - Trap Dipole
+fecmode = 4FSK.500.50
+squelch = 5
+busydet = 5
+leader = 240
+enpingack = TRUE
+listen = TRUE
+# Use 'tnc-init-cmd' to send arbitrary initialization commands
+# to the TNC when you ATTACH. Limit is 32 'tnc-init-cmd' lines,
+# of max length 128 chars. Use this only for TNC commands not
+# managed by ARIM, such as radio control commands.
+#
+# This command is specific to ardopctl
+tnc-init-cmd = RADIOHEX = 2301007056000f
+arq-sendcr = TRUE
+arq-timeout = 120
+arq-bandwidth = 500
+arq-negotiate-bw = TRUE
+btime = 10
+reset-btime-on-tx = TRUE
+#
+[arim]
+# In this section, mycall is the call sign you want to use as
+# the From: call in messages sent to other stations.
+mycall = NOCALL 
+send-repeats = 0
+ack-timeout = 30
+fecmode-downshift = TRUE 
+frame-timeout = 30
+pilot-ping = 5
+pilot-ping-thr = 60
+max-msg-days = 0
+msg-trace-en = FALSE
+# path to shared files root directory, absolute or relative
+files-dir = files/
+# additional shared files directory, path relative to files-dir
+# add-files-dir = dir1/
+# add-files-dir = dir2/sub_dir/
+# add-files-dir = dir3/*
+# access controlled shared files directory, path relative to files-dir
+# ac-files-dir = dir1/
+# ac-files-dir = dir2/sub_dir/
+# ac-files-dir = dir3/*
+# max-file-size can be set no larger than 16384
+max-file-size = 4096
+# dynamic files are defined as alias:command
+dynamic-file = date:date
+#dynamic-file = spwxfc:python forecast.py
+[log]
+# Set debug-log to TRUE to turn on the debug log. Normally
+# set to FALSE unless you need to diagnose a problem.
+debug-log = FALSE
+# Set tncpi9k6-log to TRUE to turn on the TNC-Pi9K6 debug log. Normally
+# set to FALSE unless you need to diagnose a problem. Note: this log gets
+# big fast with the default verbosity level. To limit the log size, you
+# can change the verbosity level with a LOGLEVEL command to the TNC when
+# the port is initialized. Do this with a tnc-init-cmd line in the [port]
+# section. Example: tnc-init-cmd = LOGLEVEL 6 (7 is the most verbose).
+tncpi9k6-log = FALSE
+[ui]
+# Set last-heard-time to control format of timestamps in the Calls Heard
+# list and Ping History view. Set to CLOCK for last time heard in HH:MM:SS
+# format, or to ELAPSED for elapsed time in DD:HH:MM format. Set utc-time
+# to TRUE for UTC or FALSE for local time.
+last-time-heard = CLOCK
+utc-time = TRUE
+font-size = 14
+# More info at: http://www.whitemesa.net/garim/garim.html#conf
+# or in the garim-help.pdf file included in this distribution.
+
